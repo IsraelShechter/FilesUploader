@@ -1,0 +1,252 @@
+{
+  "x-generator": "NSwag v13.7.0.0 (NJsonSchema v10.1.24.0 (Newtonsoft.Json v12.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CleanArchitecture API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/FileList/Split": {
+      "post": {
+        "tags": [
+          "FileList"
+        ],
+        "operationId": "FileList_Split",
+        "requestBody": {
+          "x-name": "splitCommand",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SplitFileCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FileVm"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/FileList/Group": {
+      "post": {
+        "tags": [
+          "FileList"
+        ],
+        "operationId": "FileList_Group",
+        "requestBody": {
+          "x-name": "groupCommand",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupFilesCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FileVm"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/FileList/Save": {
+      "post": {
+        "tags": [
+          "FileList"
+        ],
+        "operationId": "FileList_Save",
+        "requestBody": {
+          "x-name": "cmd",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaveFilesCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "FileVm": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "serial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileType": {
+            "$ref": "#/components/schemas/FileType"
+          },
+          "fileSize": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "fileSizeUnit": {
+            "$ref": "#/components/schemas/FileSizeUnit"
+          },
+          "author": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isEncoded": {
+            "type": "boolean"
+          },
+          "userCreated": {
+            "type": "string",
+            "nullable": true
+          },
+          "packageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sizeFactor": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "FileType": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "PDF",
+          "jpg",
+          "pptx",
+          "xlsx",
+          "Docs"
+        ],
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "FileSizeUnit": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "Byte",
+          "KB",
+          "MB",
+          "GB"
+        ],
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "SplitFileCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "file": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/FileVm"
+              }
+            ]
+          }
+        }
+      },
+      "GroupFilesCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "files": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/FileVm"
+            }
+          }
+        }
+      },
+      "SaveFilesCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "files": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/FileVm"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "JWT": {
+        "type": "apiKey",
+        "description": "Type into the textbox: Bearer {your JWT token}.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "JWT": []
+    }
+  ]
+}

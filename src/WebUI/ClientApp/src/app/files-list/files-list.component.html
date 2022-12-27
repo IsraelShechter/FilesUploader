@@ -1,0 +1,102 @@
+<h1>רשימת קבצים</h1>
+<app-file *ngFor="let file of files; let i = index;" [file]="file" [color]="colorsDictionary[file.packageId]" [isDistriputionMode]="isDistriputionMode" (action)="action(i, $event, file.serial)"></app-file>
+<button *ngIf="!isDistriputionMode" class="add-file btn" (click)="addFile(FileModalTemplate)">הוספת קובץ</button>
+<button *ngIf="!isDistriputionMode && files.length" class=" btn btn-default" (click)="distribution()">הכנה להפצה</button>
+<button *ngIf="isDistriputionMode" (click)="save()" class="add-file btn">שמירה</button>
+
+<div>
+    <b>נפח כולל: </b>
+    <span>{{getSumOfSize() | bytes}}</span>
+</div>
+
+<ng-template #FileModalTemplate>
+    <div class="modal-header clearfix">
+        <h4 id="title" class="modal-title float-left">{{getModalTitle()}}</h4>
+        <button type="button" class="close float-right" aria-label="Close" (click)="fileCancelled()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="fileForm" (ngSubmit)="onSubmit()" class="form">
+
+            <mat-form-field appearance="outline">
+                <mat-label>מספר סידורי</mat-label>
+                <input matInput required placeholder="מספר סידורי" formControlName="serial">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>שם הקובץ</mat-label>
+
+                <input matInput required placeholder="שם הקובץ" formControlName="fileName">
+                <mat-error *ngIf="!fileForm.controls['fileName'].valid && fileForm.controls['fileName'].touched">
+                    {{ getError('fileName') }}
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>סוג הקובץ</mat-label>
+                <select matNativeControl required formControlName="fileType">
+                <option value="1">PDF</option>
+                <option value="2">jpg</option>
+                <option value="3">pptx</option>
+                <option value="4">xlsx</option>
+                <option value="5">Docs</option>
+              </select>
+            </mat-form-field>
+
+            <div class="file-size">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>גודל הקובץ</mat-label>
+                    <input type="number" matInput required placeholder="גודל הקובץ" formControlName="fileSize">
+                    <mat-error *ngIf="!fileForm.controls['fileSize'].valid && fileForm.controls['fileSize'].touched">
+                        {{ getError('fileSize') }}
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="file-size-unit" appearance="outline">
+                    <select matNativeControl formControlName="fileSizeUnit">
+                <option value="1">Byte</option>
+                <option value="2">KB</option>
+                <option value="3">MB</option>
+                <option value="4">GB</option>
+              </select>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline">
+                <mat-label>מחבר</mat-label>
+                <input matInput placeholder="מחבר" formControlName="author">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label> תאריך חיבור</mat-label>
+                <input type="date" matInput placeholder="תאריך חיבור" formControlName="dateCreated">
+            </mat-form-field>
+            <div class="checkbox-container">
+                <mat-checkbox formControlName="isEncoded">קובץ מוצפן</mat-checkbox>
+            </div>
+            <div class="text-left">
+                <button type="button" class="btn btn-outline-info" (click)="clear()">ניקוי</button>
+
+                <button type="submit" [disabled]="!fileForm.valid" class="btn btn-primary">שמירה</button>
+            </div>
+        </form>
+
+    </div>
+
+
+</ng-template>
+
+
+<ng-template #AlertModalTemplate>
+    <div class="modal-header clearfix">
+        <h4 id="title" class="modal-title float-left">{{isSuccessMessage ? 'הודעה' : 'שגיאה'}}</h4>
+        <button type="button" class="close float-right" aria-label="Close" (click)="fileCancelled()">
+  <span aria-hidden="true">&times;</span>
+</button>
+    </div>
+    <div class="modal-body" [class.green]="isSuccessMessage">
+        {{alertMessage}}
+    </div>
+</ng-template>

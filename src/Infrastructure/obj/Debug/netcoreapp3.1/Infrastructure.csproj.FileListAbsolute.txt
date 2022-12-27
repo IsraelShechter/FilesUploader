@@ -1,0 +1,15 @@
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.deps.json
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.dll
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.pdb
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Application.dll
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Domain.dll
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Application.pdb
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\bin\Debug\netcoreapp3.1\CleanArchitecture.Domain.pdb
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfo.cs
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CopyComplete
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\obj\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.dll
+C:\Users\israels\Music\FilesUploader\src\Infrastructure\obj\Debug\netcoreapp3.1\CleanArchitecture.Infrastructure.pdb

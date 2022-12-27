@@ -1,0 +1,27 @@
+.file {
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    height: 50px;
+    align-items: center;
+    padding: 10px;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.light-text {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.actions {
+    margin-right: auto;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.pointer {
+    cursor: pointer;
+}

@@ -1,0 +1,10 @@
+C:\Users\israels\Music\FilesUploader\src\Domain\bin\Debug\netstandard2.1\CleanArchitecture.Domain.deps.json
+C:\Users\israels\Music\FilesUploader\src\Domain\bin\Debug\netstandard2.1\CleanArchitecture.Domain.dll
+C:\Users\israels\Music\FilesUploader\src\Domain\bin\Debug\netstandard2.1\CleanArchitecture.Domain.pdb
+C:\Users\israels\Music\FilesUploader\src\Domain\obj\Debug\netstandard2.1\Domain.csproj.AssemblyReference.cache
+C:\Users\israels\Music\FilesUploader\src\Domain\obj\Debug\netstandard2.1\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\israels\Music\FilesUploader\src\Domain\obj\Debug\netstandard2.1\Domain.AssemblyInfoInputs.cache
+C:\Users\israels\Music\FilesUploader\src\Domain\obj\Debug\netstandard2.1\Domain.AssemblyInfo.cs
+C:\Users\israels\Music\FilesUploader\src\Domain\obj\Debug\netstandard2.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\israels\Music\FilesUploader\src\Domain\obj\Debug\netstandard2.1\CleanArchitecture.Domain.dll
+C:\Users\israels\Music\FilesUploader\src\Domain\obj\Debug\netstandard2.1\CleanArchitecture.Domain.pdb
